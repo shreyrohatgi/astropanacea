@@ -1,0 +1,43 @@
+{% extends 'basic_django.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="py-5  text-white" style="background-color : #fed644b3 ;">
+    <div class="container" style="background-color : #f5e09612 !important  ;">
+      <div class="row">
+        <div class="col-md-6">
+          <img class="d-block img-fluid my-3" src="{% static 'Images/rsz_goddess.jpg' %}" width="500" height="200" frameborder="0" style="border:0" allowfullscreenn> </div>
+        <div class="col-md-6">
+          <font color="#c41c22">
+          <h1>Contact us</h1>
+          </font>
+            <font color="black">
+          <p>We would love to hear from you</p>
+          </font>
+          <form>
+            <div class="form-group">
+              <label for="InputName"><font color="black">Your name</font></label>
+              <input type="text" class="form-control" id="InputName" placeholder="Your name" >
+              <p id="InputName-validation" class="form-text text-muted" style = "display :none;">
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label for="InputEmail1"><font color="black">Email address</font></label>
+              <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email" >
+              <p id="InputEmail1-validation" class="form-text text-muted" style = "display :none;">
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="Textarea"><font color="black">Write here</font></label>
+              <textarea class="form-control" id="Textarea" rows="3" placeholder="Type here"></textarea>
+            </div>
+            <button type="button" class="btn btn-secondary" onclick = "submitContactUsForm()" id ="contactUsSubmit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

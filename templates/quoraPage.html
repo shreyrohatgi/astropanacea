@@ -1,0 +1,47 @@
+
+
+{% extends 'basic_django.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="py-5 text-center " style ="background-color : #fed644b3 " >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" >
+          <div class="row">
+            <div class="col-md-12" >
+              <font color="#c41c22">
+              <h1 class="text"  >{{pageDetails.title}}</h1>
+              </font>
+                <font color="black">
+              <p >
+                  {{ pageDetails.formatted_markdown|safe }}
+
+              </p>
+                </font>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="py-5" align="right" style ="background-color : #fed644b3 " >
+<div class="container" align="right" style = "width : 600px; margin : 0 auto ; max-width:100%; background-color : #fed644b3;" >
+    {% for post in posts %}
+    <div class="row mb-5"  >
+        {{ post.formatted_markdown|safe }}
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+

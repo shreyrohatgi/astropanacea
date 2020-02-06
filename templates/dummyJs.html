@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript" >
+    function onClick(id){
+        console.log(id);
+
+        let x = document.getElementById(id);
+        if (x.innerHTML === "Happy"){
+
+             x.innerHTML = "Sad"
+
+            }
+        else{
+            x.innerHTML = "Happy"
+          }
+
+
+
+     }
+
+</script>
+
+
+<p id ='id1'>A</p>
+<p id ='id2'>B</p>
+<p id ='id3'>C</p>
+
+
+<button type = "button" onclick="onClick('id1')">p1</button>
+<button type = "button" onclick="onClick('id2')">p2</button>
+<button type = "button" onclick="onClick('id3')">p3</button>
+
+
+
+</body>
+</html>

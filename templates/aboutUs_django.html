@@ -1,0 +1,34 @@
+{% extends 'basic_django.html' %}
+{% load static %}
+{% block content %}
+<font color="white">
+  <div class="py-5 text-center" style="background-color : #fed644b3  ;">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <font color="#c41c22">
+          <h1>About Our Team</h1>
+          </font>
+          <font color="black">
+          <p class="lead">We grow together with the community</p>
+          </font>
+        </div>
+      </div>
+      <div class="row">
+        {% for member in Team %}
+        <div class="col-md-4 p-4">
+          <img class="img-fluid d-block rounded-circle mx-auto" src="/{{ member.displayImage.url }}">
+          <p class="my-4">
+            <i><font color="black">{{member.intro}}</font></i>
+          </p>
+          <p>
+            <b><font color="#c41c22">{{member.name}}</font></b>
+            <br><font color="black">{{member.designation}}</font></p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</font>
+ {% endblock %}

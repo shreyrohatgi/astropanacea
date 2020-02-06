@@ -1,0 +1,43 @@
+{% extends 'basic_django.html' %}
+{% load static %}
+{% block content %}
+<div class="py-5" style="background-color : #fed644b3  ;">
+    <div class="container">
+        {% for post in posts %}
+        {% if forloop.counter|divisibleby:2 %}
+        <a href="/{{post.id }}/" style ="text-decoration: none;">
+          <div class="row mb-5">
+            <div class="col-md-7">
+                <font color="#c41c22">
+              <h2 >{{ post.title }}</h2>
+                </font>
+                <font color ="black">
+              <p class="text-dark">{{ post.formatted_markdown|safe|slice:":255" }} ...</p>
+                </font>
+            </div>
+            <div class="col-md-5 align-self-center">
+              <img class="img-fluid d-block w-100 img-thumbnail" src="/{{ post.displayImage.url  }}">
+            </div>
+          </div>
+        </a>
+        {% else %}
+        <a href="/{{post.id }}/" style ="text-decoration: none;">
+          <div class="row">
+            <div class="col-md-5">
+              <img class="img-fluid d-block mb-4 w-100 img-thumbnail" src="/{{ post.displayImage.url  }}"> </div>
+            <div class="col-md-7">
+                <font color="#c41c22">
+              <h2 >{{ post.title }}</h2>
+                </font>
+
+                <font color="black">
+              <p class="text-dark">{{ post.formatted_markdown|safe|slice:":255" }} ...</p>
+              </font>
+            </div>
+          </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

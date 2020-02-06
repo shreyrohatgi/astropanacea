@@ -1,0 +1,61 @@
+{% extends 'basic_django.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="py-5" style="background-color: #fed644b3;" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-pills flex-column">
+            <div class="card">
+
+                {% if post.useVideo  %}
+
+                <div class="card-img-top" align="right" style = "width : 600px; margin : 0 auto ; max-width:100%;height: 360px  ">
+
+                {{ post.formatted_YouTube|safe }}
+
+                </div>
+
+                {% else %}
+                <img class="card-img-top" src= "/{{ post.displayImage.url  }}" alt="Image Display" height="{{ post.imageHeight }}" width="{{ post.imageWidth }}">
+                {% endif %}
+
+                <div class="card-body"  style="
+                margin-bottom: 64px;
+            ">
+                <h1 class="card-title"><center>{{ post.title }}</center></h1>
+                <p class="card-text">
+                    <font color="black">
+                    {{ post.formatted_markdown|safe }}
+                    </font>
+                </p>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}
+
+
+
+<!--
+
+
+<center><h1 >
+        {{ post.title }}
+    </h1></center>
+    <p>Author : {{ post.author }}</p>
+    <p>Last Modified : {{ post.updated }}</p>
+    <p>Created: {{ post.created }}</p>
+    <font color="black">
+    <p >
+        {{ post.formatted_markdown|safe }}
+    </p>
+    </font>-->
